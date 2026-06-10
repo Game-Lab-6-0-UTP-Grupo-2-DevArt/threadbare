@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbpnu5w4c526m"
+path="res://.godot/imported/8bit Bossa.mp3-3d68a6beaa97d0b2a41f8c740c8eef48.mp3str"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/echo_abyss/Assets/music/temas/ambiental/8bit Bossa.mp3"
+dest_files=["res://.godot/imported/8bit Bossa.mp3-3d68a6beaa97d0b2a41f8c740c8eef48.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

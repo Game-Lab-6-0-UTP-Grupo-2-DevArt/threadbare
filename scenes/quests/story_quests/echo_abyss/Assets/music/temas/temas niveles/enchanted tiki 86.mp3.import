@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://danlmfa26tifm"
+path="res://.godot/imported/enchanted tiki 86.mp3-d1e04a24ec593f147832bc56087f8334.mp3str"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/echo_abyss/Assets/music/temas/temas niveles/enchanted tiki 86.mp3"
+dest_files=["res://.godot/imported/enchanted tiki 86.mp3-d1e04a24ec593f147832bc56087f8334.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

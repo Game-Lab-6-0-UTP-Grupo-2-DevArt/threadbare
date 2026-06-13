@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp6rf8bcq2eab"
+path="res://.godot/imported/Cleyton RX - Underwater.mp3-1c7e3ee7b9f0e972f1f63c1d8a9ae845.mp3str"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/echo_abyss/Assets/music/temas/ambiental/Cleyton RX - Underwater.mp3"
+dest_files=["res://.godot/imported/Cleyton RX - Underwater.mp3-1c7e3ee7b9f0e972f1f63c1d8a9ae845.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

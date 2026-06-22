@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0bruuivgqe1v"
-path="res://.godot/imported/contaminated_creature_IDLE.png-6efd5e0eeb82f1cfbbe81eab0b49c465.ctex"
+uid="uid://dfoavk5p87w64"
+path="res://.godot/imported/second_form_azrael_IDLE.png-c3ad51fdbef38c3602dafda13f352135.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/quests/story_quests/echo_abyss/Assets/Art/Sprites/contaminated_creature_IDLE.png"
-dest_files=["res://.godot/imported/contaminated_creature_IDLE.png-6efd5e0eeb82f1cfbbe81eab0b49c465.ctex"]
+source_file="res://scenes/quests/story_quests/echo_abyss/Assets/Art/Sprites/Azarel/Second_Form/second_form_azrael_IDLE.png"
+dest_files=["res://.godot/imported/second_form_azrael_IDLE.png-c3ad51fdbef38c3602dafda13f352135.ctex"]
 
 [params]
 

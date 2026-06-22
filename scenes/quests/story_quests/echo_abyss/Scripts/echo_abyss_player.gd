@@ -13,9 +13,12 @@ signal echo_abyss_defeated
 @export var reset_stats_on_ready: bool = true
 @export var reload_scene_on_defeat: bool = true
 @export_range(0.0, 10.0, 0.1, "suffix:s") var defeat_reload_delay: float = 1.0
+@export var trigger_transformation_on_full_essence: bool = false
+@export var transformation_sprite_frames: SpriteFrames
 
 var current_health: int = max_health
 var current_essence: int = starting_essence
+var _has_transformed: bool = false
 
 
 func _ready() -> void:
@@ -37,6 +40,7 @@ func take_damage(amount: int = 1) -> void:
 
 	set_health(current_health - amount)
 	CameraShake.shake()
+	$SFX_daño.play()
 
 	if current_health == 0:
 		_handle_echo_abyss_defeat()
@@ -61,7 +65,7 @@ func add_essence(amount: int) -> void:
 	if amount <= 0:
 		return
 	set_essence(current_essence + amount)
-
+	$SFX_esencia.play()
 
 func spend_essence(amount: int) -> bool:
 	if amount <= 0:
@@ -81,6 +85,9 @@ func set_essence(new_essence: int) -> void:
 	current_essence = clamped_essence
 	essence_changed.emit(current_essence, max_essence)
 
+	if current_essence >= max_essence and trigger_transformation_on_full_essence and not _has_transformed:
+		_trigger_transformation()
+
 
 func get_current_health() -> int:
 	return current_health
@@ -98,10 +105,42 @@ func get_max_essence() -> int:
 	return max_essence
 
 
+func _trigger_transformation() -> void:
+	_has_transformed = true
+	var anim_player: AnimationPlayer = %AnimationPlayer
+	var sprite: AnimatedSprite2D = %PlayerSprite
+	var original_frames := sprite.sprite_frames
+
+	anim_player.set_process(false)
+	anim_player.stop()
+
+	mode = Mode.SYSTEM_CONTROLLED
+	velocity = Vector2.ZERO
+
+	if transformation_sprite_frames:
+		sprite.sprite_frames = transformation_sprite_frames
+
+	sprite.play(&"transformation")
+	await sprite.animation_finished
+
+	if transformation_sprite_frames:
+		sprite.sprite_frames = original_frames
+
+	sprite.play(&"idle")
+	mode = Mode.USER_CONTROLLED
+	anim_player.set_process(true)
+	anim_player.play(&"idle")
+
+
 func _handle_echo_abyss_defeat() -> void:
 	mode = Mode.DEFEATED
 	velocity = Vector2.ZERO
 	echo_abyss_defeated.emit()
+	if owner:
+			for nodo in owner.find_children("*", "AudioStreamPlayer", true, false):
+				if nodo != $SFX_muerte and nodo.is_playing():
+					nodo.stop()
+	$SFX_muerte.play()
 	if reload_scene_on_defeat:
 		await get_tree().create_timer(defeat_reload_delay).timeout
 		SceneSwitcher.reload_with_transition(Transition.Effect.FADE, Transition.Effect.FADE)

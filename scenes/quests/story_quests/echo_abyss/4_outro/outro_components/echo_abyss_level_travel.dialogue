@@ -62,7 +62,7 @@ Criature Travel: Abriendo portal al Nivel de Combate. Ve y arrebátales lo que t
 	=> END
 => END
 
-~ finalNexo
+~ finalNexoToLeave
 Conscience: Mírate las manos, Azrael. Están temblando. ¿Es por el frío del Abismo... o por los recuerdos de la sangre que derramaste?
 Azrael: Cállate. Sé lo que hice. Sé por qué me arrojaron aquí.
 Conscience: No, no lo entiendes. No te encerraron por maldad, Azrael. Te encerraron para salvar al universo de ti. Eres una plaga. Un cataclismo con rostro.
@@ -75,6 +75,25 @@ Conscience: No hay otra forma. Esa es tu cruz, Azrael.
 Entidad: Todavía no estás listo para decidir, lo veo en tus ojos llenos de pánico.
 Entidad: Ve a mirar tus cicatrices una vez más. Las puertas del pasado siguen abiertas. Elige tu maldición.
 Criature Travel: ¿Deseas salir del abismo?
+
+- Travel
+	do travel()
+	=> END
+
+- Stay here
+	do cancel_travel()
+	=> END
+=> END
+
+~ finalNexoToStay
+Conscience: Mírate las manos, Azrael. Están temblando. ¿Es por el frío del Abismo... o por el peso de tu propia naturaleza?
+Azrael: Cállate. Sé el fuego que llevo dentro. Sé que el mundo exterior no soportaría mi calor.
+Conscience: Así es. Tu libertad es la tumba de los mortales. Si cruzas esa puerta para huir de tu soledad, reducirás todo a cenizas.
+Azrael: Me duele el alma de tanto estar solo... pero prefiero que este silencio me consuma a mí antes que convertirme en su verdugo otra vez.
+Conscience: ¿Aceptas entonces la oscuridad eterna? ¿Aceptas que esta es tu cruz?
+Azrael: Lo acepto. Mi penitencia será protegerlos de mí mismo. Me quedo en el Abismo.
+Entidad: El pánico en tus ojos se ha desvanecido. Has elegido tu maldición con honor, Azrael. Las puertas se cierran.
+Criature Travel: Tu sacrificio ha salvado al mundo exterior. Tu viaje en este abismo ha terminado, jugador. Gracias por acompañarnos en esta oscura aventura. ¡Hasta pronto!
 
 - Travel
 	do travel()

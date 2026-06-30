@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl4quwtf4sk0o"
+path="res://.godot/imported/vampires_piano.mp3-ee8469564b9255c76ca2dacbaecdc776.mp3str"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/echo_abyss/Assets/music/temas/temas niveles/vampires_piano.mp3"
+dest_files=["res://.godot/imported/vampires_piano.mp3-ee8469564b9255c76ca2dacbaecdc776.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
